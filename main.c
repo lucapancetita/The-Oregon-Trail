@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include <conio.h>
 
-int;
-float;
+int rta2, rta3, rtaE;
+float rta, hambre1=100, hambre2=100, hambre3=100, hambre4=100, hambre5=100, salud1=100, salud2=100, salud3=100, salud4=100, salud5=100;
 main(){
-
+srand (getpid());
 printf("\nc;:::::::::::::::::::::::::::::::::::::::::::::::::::;c");
 printf("\n.'lxxddddddddxdddddddddxxdddddddddddddddddddddddddddo'.");
 printf("\n.cXMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXc.");
@@ -38,8 +38,8 @@ printf("\n.cMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKdlcccc::coONMMMMMMMMMMMMMMMMMM
 printf("\n.cMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWKxolllllokKNWMMMMMMMMMMMMMMMMMMMMMMMMMMM");
 printf("\n.cXc.ll:cccccccccccccccccccccccccccccccccccccccccccccccccccc:::::::::::::::::;");
 printf("\n.cXMMMMWWWWWMWWWMWWWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXc.l");
-printf("\n.cXMW0dlllllllllllokKWMMMMMMMMMMMMMMMMMMMMMMMMWKkkKNWKkkKNXc.l");
-printf("\n.cXMW0xollc,..;cllokKWMMMMMMMMMMMMMMMMMMMMMMMMWXkkKNNk;;xXXc.l");
+printf("\n.cXMW0dlllllllllllokKWMMMMMMMMMMMMMMMMMMMMMMMMWK;;KNWKkkKNXc.l");
+printf("\n.cXMW0xollc,..;cllokKWMMMMMMMMMMMMMMMMMMMMMMMMWX;;KNNk;;xXXc.l");
 printf("\n.cXMMMWWWWXd,:kXWMWMMMMMMMMMMMMMMMMMWMMMMMMMMMMMWWMMWk;;xXXc.l");
 printf("\n.cXMMMMMMMNd,:kNWMMMMMWKxxkxdkXWN0dolllllx0NWMWKkkKWNk;;xXXc.l");
 printf("\n.cXMMMMMMMNd,:kXWMMMMMNx,':cokK0dc::cllc:;;dKWNk;;xXNk;;xXXc.l");
@@ -58,16 +58,19 @@ getch();
 printf("\n Pulse una tecla para continuar ");
 getch();
 
-printf("\n Esta es una adaptacion independiente del juego THE OREGON TRAIL a C, probablemente no sea 100*/. fiel al material original.....");
+printf("\n Esta es una adaptacion independiente del juego THE OREGON TRAIL a C, ");
+printf("\n probablemente no sea 100*/. fiel al material original.....");
 
 printf("\n Pulse una tecla para continuar ");
 getch();
-	
+
+
 	char nombre1 [20];
 	char nombre2 [20];
 	char nombre3 [20];
 	char nombre4 [20];
 	char nombre5 [20];
+	do {
 	printf("\n Ingrese el nombre de su primer personaje: ");
 	scanf("%s", &nombre1);
 	printf("\n Ingrese el nombre de su segundo personaje: ");
@@ -78,18 +81,67 @@ getch();
 	scanf("%s", &nombre4);
 	printf("\n Ingrese el nombre de su quinto personaje: ");
 	scanf("%s", &nombre5);
+
+	printf("\n");
+
+	printf("Nombre 1: %s", nombre1);
+	printf("\n");
+	printf("Nombre 2: %s", nombre2);
+	printf("\n");
+	printf("Nombre 3: %s", nombre3);
+	printf("\n");
+	printf("Nombre 4: %s", nombre4);
+	printf("\n");
+	printf("Nombre 5: %s", nombre5);
+
+	printf("\n ¿Estas seguro de que quieres llamarlos asi? 1=Si/0=No: ");
+	scanf("%f", &rta);
+	} while (rta == 0);
+
+	printf("\n DIA 0");
 	
-	printf("\n");
+	do{
+	
+	printf("\n ¿Que quieres hacer?");
+	printf("\n 1. Comenzar el viaje - 2. Revisar estado de los tripulantes");
+	printf("\n 3. Revisar suministros - 4. Observar el paÃ­saje - 5. Revisar estado de la carreta");
+	scanf("%d", &rta2);
+	
+	printf("\n Opcion elegida: %d", rta2);
+	
+	if (rta2 == 1){
+		printf("\n ¿Estas Seguro? 1=si/0=no: ");
+		scanf("%d", &rta3);
+	} 
+	
 		
-	printf("%s", nombre1);
-	printf("\n");
-	printf("%s", nombre2);
-	printf("\n");
-	printf("%s", nombre3);
-	printf("\n");
-	printf("%s", nombre4);
-	printf("\n");
-	printf("%s", nombre5);
+	if (rta2 == 2){
+		printf("\n Estado de la tripulacion: ");
+		do {
+			printf("\n Opciones:");
+			printf("\n 1=%s - 2= %s", nombre1, nombre2);
+			printf("\n 3=%s - 4=%s", nombre3, nombre4);
+			printf("\n 5=%s 0=Salir", nombre5);
+			
+			printf("\n ¿A quien desea revisar?: ");
+			scanf("%d", &rtaE);
+		} while(rtaE != 0);
+	} 
+	
+	if (rta2 == 3){
+		printf("\n Hola 2");
+	} 
+	
+	if (rta2 == 4){
+		printf("\n Hola 3");
+	} 
+	
+	if (rta2 == 5){
+		printf("\n Hola 4");
+	} 
+	
+	}while (rta3 != 1);
+
 	
 	
 	
