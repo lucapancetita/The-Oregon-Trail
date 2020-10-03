@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-int rta2, rta3, rtaE, cantcomida, municion, materiales, est1, est2, est3, est4, est5, estC;
+int rta2, rta3, rtaE, cantcomida, municion, materiales, est1, est2, est3, est4, est5, estC, suerte, robo, start;
 float rta, hambre1=100, hambre2=100, hambre3=100, hambre4=100, hambre5=100, salud1=100, salud2=100, salud3=100, salud4=100, salud5=100;
 main(){
 srand (getpid());
@@ -70,6 +70,7 @@ getch();
 	char nombre3 [20];
 	char nombre4 [20];
 	char nombre5 [20];
+	juego:
 	do {
 	printf("\n Ingrese el nombre de su primer personaje: ");
 	scanf("%s", &nombre1);
@@ -200,8 +201,14 @@ getch();
 	
 	}while (rta3 != 1);
 
+	printf("\n DIA 1");
 	
 	
-	
+		printf("*_GAME OVER_*");
+		printf("Desea continuar? 1=si/0=no: ");
+		scanf("%d", &start);
+		if (start == 1){
+		goto juego;
+		}
 	getch();
 }
