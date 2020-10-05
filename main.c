@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-int rta2, rta3, rtaE, cantcomida, municion, materiales, est1, est2, est3, est4, est5, estC, suerte, robo, start;
+int i,rta2, rta3, rtaE, cantcomida, municion, materiales, est1, est2, est3, est4, est5, estC, suerte, robo, start, contdia=0;
 float rta, hambre1=100, hambre2=100, hambre3=100, hambre4=100, hambre5=100, salud1=100, salud2=100, salud3=100, salud4=100, salud5=100;
 main(){
 srand (getpid());
@@ -71,6 +71,7 @@ getch();
 	char nombre4 [20];
 	char nombre5 [20];
 	juego:
+	contdia=0;
 	do {
 	printf("\n Ingrese el nombre de su primer personaje: ");
 	scanf("%s", &nombre1);
@@ -100,27 +101,27 @@ getch();
 	} while (rta == 0);
 
 	printf("\n DIA 0");
-	
+
 	do{
 	printf("\n");
 	printf("\n Que quieres hacer?");
 	printf("\n 1. Comenzar el viaje - 2. Revisar estado de los tripulantes");
-	printf("\n 3. Revisar suministros - 4. Observar el paisaje");  
+	printf("\n 3. Revisar suministros - 4. Observar el paisaje");
 	printf("\n 5. Revisar estado de la carreta");
 	printf("\n Escriba aqui: ");
 	scanf("%d", &rta2);
-	
+
 	printf("\n");
 	printf("\n Opcion elegida: %d", rta2);
 	printf("\n");
-	
+
 	if (rta2 == 1){
 		printf("\n Estas Seguro? 1=si/0=no: ");
 		scanf("%d", &rta3);
 		printf("\n");
-	} 
-	
-		
+	}
+
+
 	if (rta2 == 2){
 		printf("\n Estado de la tripulacion: ");
 		do {
@@ -165,8 +166,8 @@ getch();
 			}
 		printf("\n");
 		} while(rtaE != 0);
-	} 
-	
+	}
+
 	if (rta2 == 3){
 		printf("\n Suministros: ");
 		cantcomida=15;
@@ -177,15 +178,15 @@ getch();
 		printf("\n Materiales: %d", materiales);
 		getch();
 		printf("\n");
-	} 
-	
+	}
+
 	if (rta2 == 4){
 		printf("\n Paisaje: ");
 		printf("\n Falta implementar :)");
 		getch();
 		printf("\n");
-	} 
-	
+	}
+
 	if (rta2 == 5){
 		printf("\n Carreta: ");
 		estC=100;
@@ -193,17 +194,191 @@ getch();
 		printf("\n75-50 = Aceptable");
 		printf("\n50-25 = Mal");
 		printf("\n25-1 = PELIGROSO");
-	
+
 		printf("\nEl estado de la carreta es: %d", estC);
 		getch();
 		printf("\n");
-	} 
-	
+	}
+
 	}while (rta3 != 1);
 
-	printf("\n DIA 1");
+	contdia++;
+
+
+for(i=0;i<10;i++){
+
+	printf("\n DIA %d", contdia);
+	estC = estC-30;
+	hambre1 = hambre1 - (100/3);
+	hambre2 = hambre2 - (100/3);
+	hambre3 = hambre3 - (100/3);
+	hambre4 = hambre4 - (100/3);
+	hambre5 = hambre5 - (100/3); 
+	
+	if (hambre1 < 50){
+		salud1 = salud1 - 35;
+	}
+	if (hambre1 > 80 && salud1 < 100){
+		salud1 = salud1 + 15;
+		if (salud1>100){
+			salud1=100;
+		}
+	}
+	
+		if (hambre2 < 50){
+		salud2 = salud2 - 35;
+	}
+	if (hambre2 > 80 && salud2 < 100){
+		salud2 = salud2 + 15;
+		if (salud2>100){
+			salud2=100;
+		}
+	}
+	
+		if (hambre3 < 50){
+		salud3 = salud3 - 35;
+	}
+	if (hambre3 > 80 && salud3 < 100){
+		salud3 = salud3 + 15;
+		if (salud3>100){
+			salud3=100;
+		}
+	}
+	
+		if (hambre4 < 50){
+		salud4 = salud4 - 35;
+	}
+	if (hambre4 > 80 && salud4 < 100){
+		salud4 = salud4 + 15;
+		if (salud4>100){
+			salud4=100;
+		}
+	}
+	
+		if (hambre5 < 50){
+		salud5 = salud5 - 35;
+	}
+	if (hambre5 > 80 && salud5 < 100){
+		salud5 = salud5 + 15;
+		if (salud5>100){
+			salud5=100;
+		}
+	}
+	
+	do{
+	
+	rta3=0;
+	
+	printf("\n");
+	printf("\n Que quieres hacer?");
+	printf("\n 1. Continuar el viaje - 2. Revisar estado de los tripulantes");
+	printf("\n 3. Revisar suministros - 4. Observar el paisaje");
+	printf("\n 5. Revisar estado de la carreta - 6. Cazar");
+	printf("\n Escriba aqui: ");
+	scanf("%d", &rta2);
+
+	printf("\n");
+	printf("\n Opcion elegida: %d", rta2);
+	printf("\n");
+
+	if (rta2 == 1){
+		printf("\n Estas Seguro? 1=si/0=no: ");
+		scanf("%d", &rta3);
+		printf("\n");
+	}
+
+
+	if (rta2 == 2){
+		printf("\n Estado de la tripulacion: ");
+		do {
+			printf("\n");
+			printf("\n Opciones:");
+			printf("\n 1=%s - 2= %s", nombre1, nombre2);
+			printf("\n 3=%s - 4=%s", nombre3, nombre4);
+			printf("\n 5=%s 0=Salir", nombre5);
+			printf("\n");
+			printf("\n A quien desea revisar?: ");
+			scanf("%d", &rtaE);
+			printf("\n");
+			if(rtaE == 1){
+			printf("\n %s: ", nombre1);
+			printf("\n Salud: %f", salud1);
+			printf("\n Hambre: %f", hambre1);
+			getch();
+			}
+			if(rtaE == 2){
+			printf("\n %s: ", nombre2);
+			printf("\n Salud: %f", salud2);
+			printf("\n Hambre: %f", hambre2);
+			getch();
+			}
+			if(rtaE == 3){
+			printf("\n %s: ", nombre3);
+			printf("\n Salud: %f", salud3);
+			printf("\n Hambre: %f", hambre3);
+			getch();
+			}
+			if(rtaE == 4){
+			printf("\n %s: ", nombre4);
+			printf("\n Salud: %f", salud4);
+			printf("\n Hambre: %f", hambre4);
+			getch();
+			}
+			if(rtaE == 5){
+			printf("\n %s: ", nombre5);
+			printf("\n Salud: %f", salud5);
+			printf("\n Hambre: %f", hambre5);
+			getch();
+			}
+		printf("\n");
+		} while(rtaE != 0);
+	}
+
+	if (rta2 == 3){
+		printf("\n Suministros: ");
+		cantcomida=15;
+		municion=4;
+		materiales=25;
+		printf("\n Comida: %d", cantcomida);
+		printf("\n Municion: %d", municion);
+		printf("\n Materiales: %d", materiales);
+		getch();
+		printf("\n");
+	}
+
+	if (rta2 == 4){
+		printf("\n Paisaje: ");
+		printf("\n Falta implementar :)");
+		getch();
+		printf("\n");
+	}
+
+	if (rta2 == 5){
+		printf("\n Carreta: ");
+		estC=100;
+		printf("\n100-75 = Como Nuevo");
+		printf("\n75-50 = Aceptable");
+		printf("\n50-25 = Mal");
+		printf("\n25-1 = PELIGROSO");
+
+		printf("\nEl estado de la carreta es: %d", estC);
+		getch();
+		printf("\n");
+	}
+
+	}while (rta3 != 1);
 	
 	
+	
+	
+	
+	
+	contdia++;
+	}
+
+
+
+	F:
 		printf("*_GAME OVER_*");
 		printf("Desea continuar? 1=si/0=no: ");
 		scanf("%d", &start);
