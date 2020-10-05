@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-int i,rta2, rta3, rtaE, cantcomida, municion, materiales, est1, est2, est3, est4, est5, estC, suerte, robo, start, contdia=0;
+int i,rta2, rta3, rta4, rtaE, cantcomida, municion, materiales, est1, est2, est3, est4, est5, estC, suerte, robo, start, contdia=0;
 float rta, hambre1=100, hambre2=100, hambre3=100, hambre4=100, hambre5=100, salud1=100, salud2=100, salud3=100, salud4=100, salud5=100;
 main(){
 srand (getpid());
@@ -304,6 +304,15 @@ for(i=0;i<10;i++){
 			printf("\n %s: ", nombre1);
 			printf("\n Salud: %f", salud1);
 			printf("\n Hambre: %f", hambre1);
+			printf("\n");
+			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
+			scanf("%d", &rta4);
+			if(rta4 == 1){
+				hambre1 = hambre1 + 25;
+				cantcomida = cantcomida - 3;
+			}else{
+				getch();
+			}
 			getch();
 			}
 			if(rtaE == 2){
@@ -336,9 +345,6 @@ for(i=0;i<10;i++){
 
 	if (rta2 == 3){
 		printf("\n Suministros: ");
-		cantcomida=15;
-		municion=4;
-		materiales=25;
 		printf("\n Comida: %d", cantcomida);
 		printf("\n Municion: %d", municion);
 		printf("\n Materiales: %d", materiales);
