@@ -209,23 +209,37 @@ for(i=0;i<10;i++){
 
 	printf("\n DIA %d", contdia);
 	estC = estC-30;
-	hambre1 = hambre1 - (100/3);
-	hambre2 = hambre2 - (100/3);
-	hambre3 = hambre3 - (100/3);
-	hambre4 = hambre4 - (100/3);
-	hambre5 = hambre5 - (100/3); 
-	
-	if (hambre1 < 50){
+
+	if(salud1 > 0 && salud1 < 101){
+	hambre1 = hambre1 - (100/3);}
+	if(salud2 > 0 && salud2 < 101){
+	hambre2 = hambre2 - (100/3);}
+	if(salud3 > 0 && salud3 < 101){
+	hambre3 = hambre3 - (100/3);}
+	if(salud4 > 0 && salud4 < 101){
+	hambre4 = hambre4 - (100/3);}
+	if(salud5 > 0 && salud5 < 101){
+	hambre5 = hambre5 - (100/3);}
+
+	if(salud1 > 0 && salud1 < 101){
+
+	if (hambre1 < 50 && salud1 > 0){
 		salud1 = salud1 - 35;
+		if(salud1 < 0){
+			salud1==0;
+		}
 	}
 	if (hambre1 > 80 && salud1 < 100){
 		salud1 = salud1 + 15;
-		if (salud1>100){
-			salud1=100;
-		}
 	}
-	
-		if (hambre2 < 50){
+	}
+	if (salud1>100){
+		salud1=100;
+	}
+
+	if(salud2 > 0 && salud2 < 101){
+
+		if (hambre2 < 50 && salud2 > 0){
 		salud2 = salud2 - 35;
 	}
 	if (hambre2 > 80 && salud2 < 100){
@@ -234,8 +248,14 @@ for(i=0;i<10;i++){
 			salud2=100;
 		}
 	}
-	
-		if (hambre3 < 50){
+	}
+	if(salud2 < 0){
+		salud2==0;
+	}
+
+	if(salud3 > 0 && salud3 < 101){
+
+		if (hambre3 < 50 && salud3 > 0){
 		salud3 = salud3 - 35;
 	}
 	if (hambre3 > 80 && salud3 < 100){
@@ -244,8 +264,14 @@ for(i=0;i<10;i++){
 			salud3=100;
 		}
 	}
-	
-		if (hambre4 < 50){
+	}
+	if(salud3 < 0){
+		salud3==0;
+	}
+
+	if(salud4 > 0 && salud4 < 101){
+
+		if (hambre4 < 50 && salud4 > 0){
 		salud4 = salud4 - 35;
 	}
 	if (hambre4 > 80 && salud4 < 100){
@@ -254,8 +280,14 @@ for(i=0;i<10;i++){
 			salud4=100;
 		}
 	}
-	
-		if (hambre5 < 50){
+	}
+	if(salud4 < 0){
+		salud4==0;
+	}
+
+	if(salud5 > 0 && salud5 < 101){
+
+		if (hambre5 < 50 && salud5 > 0){
 		salud5 = salud5 - 35;
 	}
 	if (hambre5 > 80 && salud5 < 100){
@@ -264,11 +296,15 @@ for(i=0;i<10;i++){
 			salud5=100;
 		}
 	}
-	
+	}
+	if(salud5 < 0){
+		salud5==0;
+	}
+
 	do{
-	
+
 	rta3=0;
-	
+
 	printf("\n");
 	printf("\n Que quieres hacer?");
 	printf("\n 1. Continuar el viaje - 2. Revisar estado de los tripulantes");
@@ -302,6 +338,10 @@ for(i=0;i<10;i++){
 			printf("\n");
 			if(rtaE == 1){
 			printf("\n %s: ", nombre1);
+			if (salud1 == -5){
+				printf("\nEstado: MUERTO");
+			}
+			if (salud1 > 0 && salud1 < 101) {
 			printf("\n Salud: %f", salud1);
 			printf("\n Hambre: %f", hambre1);
 			printf("\n");
@@ -313,10 +353,15 @@ for(i=0;i<10;i++){
 			}else{
 				getch();
 			}
+		}
 			getch();
 			}
 			if(rtaE == 2){
 			printf("\n %s: ", nombre2);
+			if (salud2 == -5){
+				printf("\nEstado: MUERTO");
+			}
+			if (salud2 > 0 && salud2 < 101) {
 			printf("\n Salud: %f", salud2);
 			printf("\n Hambre: %f", hambre2);
 			printf("\n");
@@ -328,10 +373,15 @@ for(i=0;i<10;i++){
 			}else{
 				getch();
 			}
+		}
 			getch();
 			}
 			if(rtaE == 3){
 			printf("\n %s: ", nombre3);
+			if (salud3 == -5){
+				printf("\nEstado: MUERTO");
+			}
+			if (salud3 > 0 && salud3 < 101) {
 			printf("\n Salud: %f", salud3);
 			printf("\n Hambre: %f", hambre3);
 			printf("\n");
@@ -343,10 +393,15 @@ for(i=0;i<10;i++){
 			}else{
 				getch();
 			}
+		}
 			getch();
 			}
 			if(rtaE == 4){
 			printf("\n %s: ", nombre4);
+			if (salud4 == -5){
+				printf("\nEstado: MUERTO");
+			}
+			if (salud4 > 0 && salud4 < 101) {
 			printf("\n Salud: %f", salud4);
 			printf("\n Hambre: %f", hambre4);
 			printf("\n");
@@ -358,10 +413,16 @@ for(i=0;i<10;i++){
 			}else{
 				getch();
 			}
+		}
 			getch();
 			}
 			if(rtaE == 5){
 			printf("\n %s: ", nombre5);
+			if (salud5 == -5){
+				printf("\nEstado: MUERTO");
+			}
+			if (salud5 > 0 && salud5 < 101) {
+
 			printf("\n Salud: %f", salud5);
 			printf("\n Hambre: %f", hambre5);
 			printf("\n");
@@ -372,6 +433,7 @@ for(i=0;i<10;i++){
 				cantcomida = cantcomida - 3;
 			}else{
 				getch();
+			}
 			}
 			getch();
 			}
@@ -409,12 +471,12 @@ for(i=0;i<10;i++){
 	}
 
 	}while (rta3 != 1);
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	contdia++;
 	}
 
