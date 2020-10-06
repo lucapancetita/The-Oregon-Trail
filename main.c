@@ -207,6 +207,10 @@ getch();
 
 for(i=0;i<10;i++){
 
+	if (salud1 == -5 && salud2 == -5 && salud3 == -5 && salud4 == -5 && salud5 == -5){
+		goto F;
+	}
+	
 	printf("\n DIA %d", contdia);
 	estC = estC-30;
 
@@ -358,6 +362,7 @@ for(i=0;i<10;i++){
 			}
 			if(rtaE == 2){
 			printf("\n %s: ", nombre2);
+			printf("\n %f", hambre2);
 			if (salud2 == -5){
 				printf("\nEstado: MUERTO");
 			}
@@ -483,8 +488,9 @@ for(i=0;i<10;i++){
 
 
 	F:
-		printf("*_GAME OVER_*");
-		printf("Desea continuar? 1=si/0=no: ");
+		printf("\n *_GAME OVER_*");
+		printf("\n No pudiste superar el dia %d", i);
+		printf("\n Desea continuar? 1=si/0=no: ");
 		scanf("%d", &start);
 		if (start == 1){
 		goto juego;
