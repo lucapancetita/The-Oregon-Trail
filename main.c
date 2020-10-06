@@ -319,24 +319,60 @@ for(i=0;i<10;i++){
 			printf("\n %s: ", nombre2);
 			printf("\n Salud: %f", salud2);
 			printf("\n Hambre: %f", hambre2);
+			printf("\n");
+			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
+			scanf("%d", &rta4);
+			if(rta4 == 1){
+				hambre2 = hambre2 + 25;
+				cantcomida = cantcomida - 3;
+			}else{
+				getch();
+			}
 			getch();
 			}
 			if(rtaE == 3){
 			printf("\n %s: ", nombre3);
 			printf("\n Salud: %f", salud3);
 			printf("\n Hambre: %f", hambre3);
+			printf("\n");
+			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
+			scanf("%d", &rta4);
+			if(rta4 == 1){
+				hambre3 = hambre3 + 25;
+				cantcomida = cantcomida - 3;
+			}else{
+				getch();
+			}
 			getch();
 			}
 			if(rtaE == 4){
 			printf("\n %s: ", nombre4);
 			printf("\n Salud: %f", salud4);
 			printf("\n Hambre: %f", hambre4);
+			printf("\n");
+			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
+			scanf("%d", &rta4);
+			if(rta4 == 1){
+				hambre4 = hambre4 + 25;
+				cantcomida = cantcomida - 3;
+			}else{
+				getch();
+			}
 			getch();
 			}
 			if(rtaE == 5){
 			printf("\n %s: ", nombre5);
 			printf("\n Salud: %f", salud5);
 			printf("\n Hambre: %f", hambre5);
+			printf("\n");
+			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
+			scanf("%d", &rta4);
+			if(rta4 == 1){
+				hambre5 = hambre5 + 25;
+				cantcomida = cantcomida - 3;
+			}else{
+				getch();
+			}
 			getch();
 			}
 		printf("\n");
