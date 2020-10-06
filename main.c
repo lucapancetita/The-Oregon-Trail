@@ -70,7 +70,6 @@ getch();
 	char nombre3 [20];
 	char nombre4 [20];
 	char nombre5 [20];
-	juego:
 	contdia=0;
 	do {
 	printf("\n Ingrese el nombre de su primer personaje: ");
@@ -210,9 +209,9 @@ for(i=0;i<10;i++){
 	if (salud1 == -5 && salud2 == -5 && salud3 == -5 && salud4 == -5 && salud5 == -5){
 		goto F;
 	}
-	
+
 	printf("\n DIA %d", contdia);
-	estC = estC-30;
+	estC = estC-20;
 
 	if(salud1 > 0 && salud1 < 101){
 	hambre1 = hambre1 - (100/3);}
@@ -464,7 +463,6 @@ for(i=0;i<10;i++){
 
 	if (rta2 == 5){
 		printf("\n Carreta: ");
-		estC=100;
 		printf("\n100-75 = Como Nuevo");
 		printf("\n75-50 = Aceptable");
 		printf("\n50-25 = Mal");
@@ -490,10 +488,5 @@ for(i=0;i<10;i++){
 	F:
 		printf("\n *_GAME OVER_*");
 		printf("\n No pudiste superar el dia %d", i);
-		printf("\n Desea continuar? 1=si/0=no: ");
-		scanf("%d", &start);
-		if (start == 1){
-		goto juego;
-		}
-	getch();
+		getch();
 }
