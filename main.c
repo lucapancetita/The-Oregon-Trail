@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <conio.h>
 
-int i,rta2, rta3, rta4, rtaE, cantcomida, municion, materiales, est1, est2, est3, est4, est5, estC, suerte, robo, start, contdia=0;
+int i,rta2, rta3, rta4, rta5, rtaE, cantcomida, municion, materiales, est1, est2, est3, est4, est5, estC, suerte, robo, start, contdia=0, probrobo, decrobo;
 float rta, hambre1=100, hambre2=100, hambre3=100, hambre4=100, hambre5=100, salud1=100, salud2=100, salud3=100, salud4=100, salud5=100;
 main(){
 srand (getpid());
@@ -102,6 +102,7 @@ getch();
 	printf("\n DIA 0");
 
 	do{
+
 	printf("\n");
 	printf("\n Que quieres hacer?");
 	printf("\n 1. Comenzar el viaje - 2. Revisar estado de los tripulantes");
@@ -171,7 +172,7 @@ getch();
 		printf("\n Suministros: ");
 		cantcomida=15;
 		municion=4;
-		materiales=25;
+		materiales=20;
 		printf("\n Comida: %d", cantcomida);
 		printf("\n Municion: %d", municion);
 		printf("\n Materiales: %d", materiales);
@@ -210,24 +211,119 @@ for(i=0;i<10;i++){
 		goto F;
 	}
 
+	/*probrobo = rand() % 11;
+	printf("\n");
+
+	if(probrobo < 5){
+		printf("\n TE ESTAN ROBANDO!!!!!!");
+
+			printf("\nQue quieres hacer?");
+			printf("\n 1=Defenderte / 0=Dejar que te roben: ");
+			scanf("%d", &decrobo);
+		if(municion > 0){
+		if(decrobo==1){
+		municion=municion-1;
+		printf("\nTe defendiste con exito de los ladrones :)");
+		}
+		if(decrobo==0){
+			materiales = materiales - 7;
+			cantcomida = cantcomida - 9;
+			if(cantcomida < 0){
+				cantcomida==0;
+			}
+				if(materiales < 0){
+				materiales==0;
+			}
+		}
+		}
+		if(municion == 0){
+			printf("\n No tienes balas para defenderte");
+			materiales = materiales - 7;
+			cantcomida = cantcomida - 9;
+			if(cantcomida < 0){
+				cantcomida==0;
+			}
+			if(materiales < 0){
+				materiales==0;
+			}
+		}
+
+	} */
+
+
 	printf("\n DIA %d", contdia);
-	estC = estC-20;
+	estC = estC-30;
 
 	if(salud1 > 0 && salud1 < 101){
-	hambre1 = hambre1 - (100/3);}
+	hambre1 = hambre1 - (100/3);
+	if(hambre1 < 0){
+		hambre1=0;
+	}
+	}
 	if(salud2 > 0 && salud2 < 101){
-	hambre2 = hambre2 - (100/3);}
+	hambre2 = hambre2 - (100/3);
+	if(hambre2 < 0){
+		hambre2=0;
+	}
+	}
 	if(salud3 > 0 && salud3 < 101){
-	hambre3 = hambre3 - (100/3);}
+	hambre3 = hambre3 - (100/3);
+	if(hambre3 < 0){
+		hambre3=0;
+	}
+	}
 	if(salud4 > 0 && salud4 < 101){
-	hambre4 = hambre4 - (100/3);}
+	hambre4 = hambre4 - (100/3);
+	if(hambre4 < 0){
+		hambre4=0;
+	}
+	}
 	if(salud5 > 0 && salud5 < 101){
-	hambre5 = hambre5 - (100/3);}
+	hambre5 = hambre5 - (100/3);
+	if(hambre5 < 0){
+		hambre5=0;
+	}
+	}
+
+	if(hambre1 < 0){
+			hambre1==0;
+		}
+	if(hambre2 < 0){
+			hambre2==0;
+		}
+	if(hambre3 < 0){
+			hambre3==0;
+		}
+	if(hambre4 < 0){
+			hambre4==0;
+		}
+	if(hambre5 < 0){
+			hambre5==0;
+		}
+
+
+
+	if(salud1 < 0){
+			salud1==0;
+		}
+	if(salud2 < 0){
+			salud2==0;
+		}
+	if(salud3 < 0){
+			salud3==0;
+		}
+	if(salud4 < 0){
+			salud4==0;
+		}
+	if(salud5 < 0){
+			salud5==0;
+		}
+
 
 	if(salud1 > 0 && salud1 < 101){
 
 	if (hambre1 < 50 && salud1 > 0){
-		salud1 = salud1 - 35;
+		salud1 = salud1 - 18;
 		if(salud1 < 0){
 			salud1==0;
 		}
@@ -243,7 +339,7 @@ for(i=0;i<10;i++){
 	if(salud2 > 0 && salud2 < 101){
 
 		if (hambre2 < 50 && salud2 > 0){
-		salud2 = salud2 - 35;
+		salud2 = salud2 - 18;
 	}
 	if (hambre2 > 80 && salud2 < 100){
 		salud2 = salud2 + 15;
@@ -259,7 +355,7 @@ for(i=0;i<10;i++){
 	if(salud3 > 0 && salud3 < 101){
 
 		if (hambre3 < 50 && salud3 > 0){
-		salud3 = salud3 - 35;
+		salud3 = salud3 - 18;
 	}
 	if (hambre3 > 80 && salud3 < 100){
 		salud3 = salud3 + 15;
@@ -275,7 +371,7 @@ for(i=0;i<10;i++){
 	if(salud4 > 0 && salud4 < 101){
 
 		if (hambre4 < 50 && salud4 > 0){
-		salud4 = salud4 - 35;
+		salud4 = salud4 - 18;
 	}
 	if (hambre4 > 80 && salud4 < 100){
 		salud4 = salud4 + 15;
@@ -291,7 +387,7 @@ for(i=0;i<10;i++){
 	if(salud5 > 0 && salud5 < 101){
 
 		if (hambre5 < 50 && salud5 > 0){
-		salud5 = salud5 - 35;
+		salud5 = salud5 - 18;
 	}
 	if (hambre5 > 80 && salud5 < 100){
 		salud5 = salud5 + 15;
@@ -341,7 +437,7 @@ for(i=0;i<10;i++){
 			printf("\n");
 			if(rtaE == 1){
 			printf("\n %s: ", nombre1);
-			if (salud1 == -5){
+			if (salud1 < 0){
 				printf("\nEstado: MUERTO");
 			}
 			if (salud1 > 0 && salud1 < 101) {
@@ -350,19 +446,21 @@ for(i=0;i<10;i++){
 			printf("\n");
 			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
 			scanf("%d", &rta4);
-			if(rta4 == 1){
+			if(rta4 == 1 && cantcomida > 2){
 				hambre1 = hambre1 + 25;
 				cantcomida = cantcomida - 3;
-			}else{
-				getch();
 			}
+			if(rta4 == 1 && cantcomida < 2){
+				printf("\n No tienes suficiente comida");
+			} 
+			 getch();	
 		}
 			getch();
 			}
 			if(rtaE == 2){
 			printf("\n %s: ", nombre2);
 			printf("\n %f", hambre2);
-			if (salud2 == -5){
+			if (salud2 < 0){
 				printf("\nEstado: MUERTO");
 			}
 			if (salud2 > 0 && salud2 < 101) {
@@ -371,18 +469,21 @@ for(i=0;i<10;i++){
 			printf("\n");
 			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
 			scanf("%d", &rta4);
-			if(rta4 == 1){
+			if(rta4 == 1 && cantcomida > 2){
 				hambre2 = hambre2 + 25;
 				cantcomida = cantcomida - 3;
-			}else{
+			}
+			if(rta4 == 1 && cantcomida < 2){
+				printf("\n No tienes suficiente comida");
+			} 
 				getch();
 			}
-		}
+		
 			getch();
 			}
 			if(rtaE == 3){
 			printf("\n %s: ", nombre3);
-			if (salud3 == -5){
+			if (salud3 < 0){
 				printf("\nEstado: MUERTO");
 			}
 			if (salud3 > 0 && salud3 < 101) {
@@ -391,18 +492,20 @@ for(i=0;i<10;i++){
 			printf("\n");
 			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
 			scanf("%d", &rta4);
-			if(rta4 == 1){
+			if(rta4 == 1 && cantcomida > 2){
 				hambre3 = hambre3 + 25;
 				cantcomida = cantcomida - 3;
-			}else{
-				getch();
 			}
+			if(rta4 == 1 && cantcomida < 2){
+				printf("\n No tienes suficiente comida");
+			} 
+				getch();
 		}
 			getch();
 			}
 			if(rtaE == 4){
 			printf("\n %s: ", nombre4);
-			if (salud4 == -5){
+			if (salud4 < 0){
 				printf("\nEstado: MUERTO");
 			}
 			if (salud4 > 0 && salud4 < 101) {
@@ -411,18 +514,20 @@ for(i=0;i<10;i++){
 			printf("\n");
 			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
 			scanf("%d", &rta4);
-			if(rta4 == 1){
+			if(rta4 == 1 && cantcomida > 2){
 				hambre4 = hambre4 + 25;
 				cantcomida = cantcomida - 3;
-			}else{
+			}
+			if(rta4 == 1 && cantcomida < 2){
+				printf("\n No tienes suficiente comida");
+			} 
 				getch();
 			}
-		}
 			getch();
 			}
 			if(rtaE == 5){
 			printf("\n %s: ", nombre5);
-			if (salud5 == -5){
+			if (salud5 < 0){
 				printf("\nEstado: MUERTO");
 			}
 			if (salud5 > 0 && salud5 < 101) {
@@ -432,12 +537,15 @@ for(i=0;i<10;i++){
 			printf("\n");
 			printf("Desea alimentar a este tripulante? 1=si/0=no: ");
 			scanf("%d", &rta4);
-			if(rta4 == 1){
+			if(rta4 == 1 && cantcomida > 2){
 				hambre5 = hambre5 + 25;
 				cantcomida = cantcomida - 3;
-			}else{
-				getch();
 			}
+			if(rta4 == 1 && cantcomida < 2){
+				printf("\n No tienes suficiente comida");
+			} 
+				getch();
+			
 			}
 			getch();
 			}
@@ -469,6 +577,19 @@ for(i=0;i<10;i++){
 		printf("\n25-1 = PELIGROSO");
 
 		printf("\nEl estado de la carreta es: %d", estC);
+
+		if(estC < 100 && estC > 0){
+		printf("\n Quieres reparar la carroza? 1=si/0=no: ");
+		scanf("%d", &rta5);
+		if(rta5 = 1){
+			if(materiales > 0 && materiales > 4){
+				estC = estC + 20;
+				materiales = materiales - 4;
+			} else {
+				printf("\nNo tienes suficientes materiales...");
+			}
+		}
+		}
 		getch();
 		printf("\n");
 	}
